@@ -10,9 +10,7 @@ class Field:
         self.columns = columns
         self.grid = [[0] * columns for _ in range(rows)]
         self.grid_color = 0x69af69
-        self.cnt_full_rows = 0
-        #self.is_started = True
-        #self.is_paused = False
+        self.score = 0
         self.want_new_shape = True
         self.is_game_over = False
 
@@ -34,14 +32,11 @@ class Field:
             if 0 not in row:
                 del self.grid[y]
                 self.grid = [[0] * self.columns] + self.grid
-                self.cnt_full_rows += 1
+                self.score += 10
         self.want_new_shape = True
 
+
 class Shape:
-
-    #def __init__(self):
-        #pass
-
     def new_shape(self, GameBoard):
         """Спауним новую фигуру и проверяем, может ли она двигаться"""
         self.shape = choice(shapes)

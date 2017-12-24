@@ -41,5 +41,6 @@ class TestClasses(unittest.TestCase):
         self.assertEqual(self.game_board.grid[16][5], 0)
         self.assertEqual(self.game_board.grid[16][6], 0)
 
+
 if __name__ == '__main__':
     unittest.main()
